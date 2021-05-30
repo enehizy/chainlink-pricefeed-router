@@ -8,6 +8,7 @@ contract ChainlinkPriceFeedRouter is Ownable{
     constructor() Ownable(){
 
     }
+    event PairRegistered(bytes4 id,address indexed pair);
     function getPriceForPair(string memory firstTokenName ,string memory secondTokenName) external view returns(int){
           address _pricefeed=getPriceFeedAddress(firstTokenName,secondTokenName);
           if(_pricefeed == address(0)){
@@ -23,12 +24,12 @@ contract ChainlinkPriceFeedRouter is Ownable{
              return  pricefeed[_id];
     } 
 
-    function registerPair(string calldata firstTokenName, string calldata secondTokenName,address pricefeedAddress) onlyOwner()  external returns(bytes4){
+    function registerPair(string calldata firstTokenName, string calldata secondTokenName,address pricefeedAddress) onlyOwner()  external {
           require(pricefeedAddress != address(0),"Invalid feed address");
           require(getPriceFeedAddress(firstTokenName,secondTokenName) == address(0),"price feed already exist");
           bytes4 _id=_pointer(firstTokenName,secondTokenName);
           pricefeed[_id] = pricefeedAddress;
-          return _id;
+          emit PairRegistered(_id,pricefeedAddress);
     }
 
    function _pointer(string memory firstTokenName ,string memory secondTokenName) private view returns(bytes4){

@@ -2,7 +2,7 @@
   "_format": "hh-sol-cache-2",
   "files": {
     "C:\\Users\\User\\Desktop\\projects\\chainlink-oracle-router\\contracts\\ChainlinkPriceFeedRouter.sol": {
-      "lastModificationDate": 1622356240815,
+      "lastModificationDate": 1622358944997,
       "contentHash": "139571dbfb65469bb8c56c8f3ef8b5a9",
       "sourceName": "contracts/ChainlinkPriceFeedRouter.sol",
       "solcConfig": {
@@ -140,6 +140,40 @@
       ],
       "artifacts": [
         "Context"
+      ]
+    },
+    "C:\\Users\\User\\Desktop\\projects\\chainlink-oracle-router\\node_modules\\hardhat\\console.sol": {
+      "lastModificationDate": 1622272786176,
+      "contentHash": "cc4777addd464ea56fa35b1c45df0591",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.0",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
       ]
     }
   }

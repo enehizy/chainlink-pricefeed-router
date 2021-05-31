@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy-kovan":"npx hardhat run ./scripts/deploy/kovan.js --network kovan",
+    "deploy-rinkeby":"npx hardhat run ./scripts/deploy/rinkeby.js --network rinkeby"
   },
   "author": "",
   "license": "ISC",
